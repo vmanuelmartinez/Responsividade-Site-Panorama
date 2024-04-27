@@ -1,5 +1,6 @@
 :root {
     --color_menu: #9d968f;
+    /* Começamos definindo os roots para poder mexer as cores facilmente */
     --c_header: #564d4d;
     --c_footer: #000000;
     --c_borda_menu: #807d7d;
@@ -18,6 +19,7 @@ body {
     margin: auto;
     font-size: 30px;
     width: 70%;
+    /* O site é ajustado em width de 80% por default */
     text-align: justify;
     background-color: #ffffff;
 }
@@ -29,6 +31,7 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     border-bottom: 1px solid #ffffff;
+
 }
 
 .menu {
@@ -63,6 +66,7 @@ h1 {
 
 content {
     display: flex;
+    /* converte o elemento "content" em um contêiner flexível, seus elementos secundários (filhos) se comportarão como elementos flexíveis, permitindo um controle mais fácil de sua disposição e alinhamento.*/
 }
 
 .box {
@@ -85,35 +89,113 @@ content {
 }
 
 @media screen and (max-width: 1024px) {
-    .main {
-        width: 85%;
-    }
-}
-
-
-@media screen and (max-width: 768px) {
+    /* Definimos algumas configurações básicas para telas de 1024px */
 
     body {
         background-image: none;
+        background-color: #e2dddd;
     }
 
     .main {
-        width: 85%;
+        width: 75%;
         border: 8px solid var(--c_borda_menu);
         padding: 10px;
         font-size: 20px;
     }
 
+    .header h1 {
+        font-size: 60px;
+        height: 100px;
+        margin-top: 0;
+        padding-top: 30px;
+    }
+
+    .header p {
+        font-size: 30px;
+    }
+
+    .menu ul li a {
+        font-size: 30px;
+    }
+}
+
+
+
+/* A partir daqui, definimos algumas configurações para telas mais pequenas (768px)*/
+@media screen and (max-width: 768px) {
+
+    body {
+        background-image: none;
+        background-color: #676c9e;
+    }
+
+    .main {
+        width: 85%;
+        border: 15px solid var(--c_borda_menu);
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .header {
+        background-color: var(--c_header);
+        color: #ffffff;
+        text-align: center;
+        text-transform: uppercase;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    .header h1 {
+        height: 100px;
+        margin-top: 0;
+        padding-top: 30px;
+        font-size: 50px;
+    }
+
+    .menu {
+        background-color: var(--color_menu);
+        border-top: 8px solid var(--c_borda_menu);
+        padding: 0px;
+        margin: 0px;
+        height: 50px;
+    }
+
+    .menu a {
+        font-size: 28px;
+    }
+
+    .banner img {
+        height: 150px;
+    }
+
+    .content {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(208, 207, 216);
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
+    }
+
+    .box img {
+        border-bottom: darkblue 2px;
+    }
+
     .box h2 {
         text-align: center;
+        justify-content: center;
     }
 
     .box p {
-        text-align: justify;
+        font-size: 25px;
     }
 
-
-    .content {
-        flex-direction: column;
+    .footer {
+        padding: 20px;
+        text-align: center;
+        font-size: 25px;
+        background-color: var(--c_footer);
+        color: #ffffff;
     }
 }
